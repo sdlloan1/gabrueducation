@@ -2,13 +2,25 @@
   "name": "gabru-education",
   "version": "1.0.0",
   "private": true,
-  "description": "Gabru Education — website, courses and a blog where every post is published as its own standalone HTML file.",
+  "description": "Gabru Education — the public website, a blog where every post is published as its own standalone HTML file, and a React staff console with a Node API.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "build": "vite build --config client/vite.config.mjs",
+    "serve:built": "NODE_ENV=production node server.js"
   },
   "engines": {
-    "node": ">=18.11"
+    "node": ">=20.19"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.5"
   }
 }

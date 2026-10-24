@@ -3,3 +3,8 @@ npm-debug.log*
 .DS_Store
 # Runtime inbox written by the contact form (not content to version)
 data/messages.json
+# Staff accounts and sessions — created by the console, never committed
+data/users.json
+data/sessions.json
+# Built console bundle
+client/dist/
