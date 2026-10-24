@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Gabru Education">
+  <defs>
+    <linearGradient id="logo-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f8bf5"/>
+      <stop offset="1" stop-color="#0f4fb0"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="url(#logo-bg)"/>
+  <path d="M32 13 55 24 32 35 9 24z" fill="#ffffff"/>
+  <path d="M19.5 30.5V41c0 3.7 5.6 6.6 12.5 6.6S44.5 44.7 44.5 41V30.5" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" stroke-opacity=".9"/>
+  <path d="M55 24v14" stroke="#ffb066" stroke-width="2.8" stroke-linecap="round"/>
+  <circle cx="55" cy="41.5" r="3.2" fill="#ffb066"/>
+</svg>

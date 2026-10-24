@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" role="img" aria-label="Books, a graduation cap and a progress chart">
+  <defs>
+    <linearGradient id="hero-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f97ff"/>
+      <stop offset="1" stop-color="#1668e3"/>
+    </linearGradient>
+    <linearGradient id="hero-navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c4677"/>
+      <stop offset="1" stop-color="#0b2340"/>
+    </linearGradient>
+    <linearGradient id="hero-amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb066"/>
+      <stop offset="1" stop-color="#ff7a18"/>
+    </linearGradient>
+    <linearGradient id="hero-card" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dce8fa"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ambient shapes -->
+  <circle cx="524" cy="146" r="196" fill="url(#hero-blue)" opacity=".22"/>
+  <circle cx="148" cy="424" r="152" fill="url(#hero-amber)" opacity=".16"/>
+  <circle cx="360" cy="284" r="250" fill="none" stroke="#ffffff" stroke-opacity=".14" stroke-width="1.6" stroke-dasharray="7 11"/>
+  <circle cx="168" cy="120" r="5" fill="#ffffff" opacity=".55"/>
+  <circle cx="598" cy="248" r="5" fill="#ffffff" opacity=".45"/>
+  <circle cx="92" cy="330" r="4" fill="#ffffff" opacity=".4"/>
+
+  <!-- sparkles -->
+  <path d="M628 82l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#ffd8ac" opacity=".95"/>
+  <path d="M128 200l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#ffffff" opacity=".8"/>
+  <path d="M664 470l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#ffffff" opacity=".55"/>
+
+  <!-- progress card -->
+  <rect x="184" y="168" width="380" height="250" rx="26" fill="#04101f" opacity=".38"/>
+  <rect x="176" y="150" width="380" height="250" rx="26" fill="url(#hero-card)"/>
+  <rect x="200" y="176" width="118" height="14" rx="7" fill="#b9cbe6"/>
+  <circle cx="508" cy="183" r="5" fill="#c9d9ef"/>
+  <circle cx="526" cy="183" r="5" fill="#c9d9ef"/>
+  <circle cx="544" cy="183" r="5" fill="#c9d9ef"/>
+
+  <!-- bars -->
+  <rect x="204" y="306" width="34" height="66" rx="9" fill="url(#hero-blue)" opacity=".55"/>
+  <rect x="252" y="274" width="34" height="98" rx="9" fill="url(#hero-blue)" opacity=".7"/>
+  <rect x="300" y="248" width="34" height="124" rx="9" fill="url(#hero-blue)" opacity=".85"/>
+  <rect x="348" y="268" width="34" height="104" rx="9" fill="url(#hero-blue)" opacity=".75"/>
+  <rect x="396" y="216" width="34" height="156" rx="9" fill="url(#hero-amber)"/>
+
+  <!-- trend line -->
+  <polyline points="221,292 269,258 317,232 365,250 413,196" fill="none" stroke="#ff7a18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="221" cy="292" r="6" fill="#ffffff" stroke="#ff7a18" stroke-width="3"/>
+  <circle cx="317" cy="232" r="6" fill="#ffffff" stroke="#ff7a18" stroke-width="3"/>
+  <circle cx="413" cy="196" r="6" fill="#ffffff" stroke="#ff7a18" stroke-width="3"/>
+
+  <!-- graduation cap -->
+  <polygon points="330,40 418,80 330,120 242,80" fill="url(#hero-navy)"/>
+  <path d="M262 98v22c0 13 30 24 68 24s68-11 68-24V98" fill="none" stroke="url(#hero-navy)" stroke-width="14" stroke-linecap="round"/>
+  <path d="M418 80v54" stroke="#ff7a18" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="418" cy="140" r="10" fill="#ffb066"/>
+
+  <!-- book stack -->
+  <ellipse cx="196" cy="546" rx="140" ry="16" fill="#04101f" opacity=".3"/>
+  <rect x="88" y="424" width="222" height="34" rx="10" fill="url(#hero-amber)"/>
+  <rect x="76" y="462" width="246" height="34" rx="10" fill="#ffffff" opacity=".95"/>
+  <rect x="94" y="500" width="210" height="34" rx="10" fill="url(#hero-blue)"/>
+  <rect x="104" y="432" width="6" height="18" rx="3" fill="#ffffff" opacity=".75"/>
+  <rect x="92" y="470" width="6" height="18" rx="3" fill="#7fa6dd" opacity=".8"/>
+  <rect x="110" y="508" width="6" height="18" rx="3" fill="#ffffff" opacity=".75"/>
+
+  <!-- result badge -->
+  <rect x="580" y="352" width="88" height="88" rx="24" fill="#ffffff" opacity=".94"/>
+  <path d="M604 396l16 16 32-34" fill="none" stroke="#1668e3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

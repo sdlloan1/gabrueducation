@@ -1,0 +1,14 @@
+{
+  "name": "gabru-education",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gabru Education — website, courses and a blog where every post is published as its own standalone HTML file.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18.11"
+  }
+}
