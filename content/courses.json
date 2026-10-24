@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "foundation-program",
+    "title": "Foundation Program",
+    "level": "Class 6 – 8",
+    "duration": "12 weeks per term",
+    "mode": "Offline, 4 days a week",
+    "fee": "₹4,500 / month",
+    "icon": "spark",
+    "summary": "Builds the basics of Maths and Science with hands-on activities, so higher classes never feel like a jump.",
+    "highlights": [
+      "Concept-first Maths and Science",
+      "Weekly activity lab and science experiments",
+      "Reading and mental-maths drills"
+    ]
+  },
+  {
+    "slug": "class-9-10-science-maths",
+    "title": "Class 9 – 10 Science & Maths",
+    "level": "Class 9 – 10",
+    "duration": "Full academic year",
+    "mode": "Offline, 6 days a week",
+    "fee": "₹6,200 / month",
+    "icon": "board",
+    "summary": "Board-aligned coaching that finishes the syllabus early and leaves the last two months for revision and papers.",
+    "highlights": [
+      "Chapter tests every week",
+      "Numericals and derivation practice sheets",
+      "Board answer-writing workshops"
+    ]
+  },
+  {
+    "slug": "class-11-12-pcm",
+    "title": "Class 11 – 12 Physics, Chemistry, Maths",
+    "level": "Class 11 – 12",
+    "duration": "Two-year programme",
+    "mode": "Offline, 6 days a week",
+    "fee": "₹8,900 / month",
+    "icon": "atom",
+    "summary": "Serious science coaching for students who want strong board marks alongside competitive-exam preparation.",
+    "highlights": [
+      "Concept classes plus daily problem-solving hour",
+      "NCERT-to-advanced question banks",
+      "Practical and viva preparation"
+    ]
+  },
+  {
+    "slug": "jee-main-advanced-intensive",
+    "title": "JEE Main + Advanced Intensive",
+    "level": "Class 11, 12 & droppers",
+    "duration": "45 weeks",
+    "mode": "Offline + online test series",
+    "fee": "₹11,500 / month",
+    "icon": "target",
+    "summary": "A test-heavy programme with full-length mock exams, rank analytics and one-to-one mentoring after every test.",
+    "highlights": [
+      "38 full-syllabus mock tests",
+      "Question-wise time and accuracy analysis",
+      "Personal mentoring every fortnight"
+    ]
+  },
+  {
+    "slug": "neet-biology-foundation",
+    "title": "NEET Biology & Foundation",
+    "level": "Class 11, 12 & droppers",
+    "duration": "40 weeks",
+    "mode": "Offline + online test series",
+    "fee": "₹9,800 / month",
+    "icon": "leaf",
+    "summary": "Line-by-line NCERT coverage with diagram practice and rapid-revision modules for medical aspirants.",
+    "highlights": [
+      "NCERT line-by-line completion",
+      "Diagram and terminology drills",
+      "Weekly 200-question practice papers"
+    ]
+  },
+  {
+    "slug": "spoken-english-communication",
+    "title": "Spoken English & Communication",
+    "level": "Class 8 and above",
+    "duration": "10 weeks",
+    "mode": "Offline, 3 days a week",
+    "fee": "₹3,200 / month",
+    "icon": "chat",
+    "summary": "Confidence-building sessions for students who understand English but hesitate to speak it.",
+    "highlights": [
+      "Daily speaking circles in small groups",
+      "Interview and presentation practice",
+      "Grammar clinics without rote rules"
+    ]
+  }
+]

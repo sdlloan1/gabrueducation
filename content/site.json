@@ -1,0 +1,16 @@
+{
+  "name": "Gabru Education",
+  "tagline": "Learning that builds confident students.",
+  "description": "Gabru Education is a modern learning centre for school students and competitive-exam aspirants — small batches, a daily doubt desk and weekly progress reports for every family.",
+  "email": "hello@gabrueducation.in",
+  "phone": "+91 98765 43210",
+  "whatsapp": "+91 98765 43210",
+  "address": "2nd Floor, Gurukul Plaza, Sector 22, Chandigarh 160022",
+  "hours": "Monday to Saturday, 8:00 AM – 8:00 PM",
+  "established": "2013",
+  "social": [
+    { "label": "YouTube", "href": "https://youtube.com" },
+    { "label": "Instagram", "href": "https://instagram.com" },
+    { "label": "Facebook", "href": "https://facebook.com" }
+  ]
+}
