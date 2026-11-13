@@ -2,6 +2,8 @@
 // after sign-in, e.g. the MCP OAuth consent page). Keep the redirect
 // validation in one place — it is security-sensitive and easy to drift.
 
+import { stripBasePath } from "@/lib/urls";
+
 // Resolve ?returnTo= to a safe same-origin path, else "/".
 //
 // The same-origin check alone is not enough: a value like /.//evil.com or
@@ -20,7 +22,9 @@ export function safeReturnTo() {
     for (const p of ["access_token", "clear_access_token", "app_id", "app_base_url", "functions_version", "from_url"]) {
       url.searchParams.delete(p);
     }
-    const path = url.pathname + url.search;
+    // The app may be served from a sub-path (static hosting); the router wants
+    // the path without it.
+    const path = stripBasePath(url.pathname) + url.search;
     if (!path.startsWith("/") || path.startsWith("//") || path.includes("\\")) return "/";
     return path;
   } catch {

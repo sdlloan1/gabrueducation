@@ -20,6 +20,9 @@ if (process.env.BASE44_PREVIEW_MODE === '1') {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // GitHub Pages serves a project site from /<repo>/, so the build takes the
+  // sub-path from the environment. Unset (local dev, Base44) keeps the root.
+  base: process.env.VITE_BASE_PATH || '/',
   resolve: {
     // Mirrors the "@/*" paths in jsconfig.json
     alias: {

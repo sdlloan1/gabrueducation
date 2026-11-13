@@ -1,6 +1,7 @@
 const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
 
 import * as React from "react"
+import { apiUrl } from "@/lib/urls"
 import { ResponsiveImage } from "./responsive-image"
 import {
   getOriginalImageUrl,
@@ -37,7 +38,9 @@ const Image = React.forwardRef(
   ) => {
     const [previewSource, setPreviewSource] = React.useState(null)
     const preview = previewSource?.source === source ? previewSource : null
-    const src = preview ? preview.value : source
+    // Uploaded artwork and placeholders are served by the API, which can live on
+    // a different origin than the frontend (static hosting).
+    const src = preview ? apiUrl(preview.value) : apiUrl(source)
     const replaceSource = (value, className) => setPreviewSource({
       source, value, className, sourceClassName: props.className,
     })

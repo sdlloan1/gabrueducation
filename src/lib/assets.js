@@ -1,12 +1,14 @@
 const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
 
+import { apiUrl } from "@/lib/urls";
+
 // Brand assets
 export const BRAND = {
   name: "Gabru Education",
   tagline: "Templates, prompts, courses & digital tools",
   siteUrl: "https://gabrueducation.db.app",
-  logo: "/api/placeholders/gabru-education-logo.svg?label=GE&w=512&h=512",
-  logoSmall: "/api/placeholders/gabru-education-logo.svg?label=GE&w=180&h=180",
+  logo: apiUrl("/api/placeholders/gabru-education-logo.svg?label=GE&w=512&h=512"),
+  logoSmall: apiUrl("/api/placeholders/gabru-education-logo.svg?label=GE&w=180&h=180"),
 };
 
 // Isometric 3D artwork used by the seeded catalogue and blog.

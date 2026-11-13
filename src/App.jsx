@@ -8,6 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { CartProvider } from '@/context/CartContext';
+import { basePath } from '@/lib/urls';
 import AppShell from '@/components/AppShell';
 import AdminLayout from '@/components/admin/AdminLayout';
 // Add page imports here
@@ -133,7 +134,7 @@ function App() {
     <AuthProvider>
       <QueryClientProvider client={queryClientInstance}>
         <CartProvider>
-          <Router>
+          <Router basename={basePath || undefined}>
             <ScrollToTop />
             <AuthenticatedApp />
           </Router>
