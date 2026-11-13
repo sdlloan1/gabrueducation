@@ -1,0 +1,159 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "string",
+      "title": "Order number"
+    },
+    "user_id": {
+      "type": "string",
+      "title": "Customer user id"
+    },
+    "customer_name": {
+      "type": "string",
+      "title": "Full name"
+    },
+    "mobile": {
+      "type": "string",
+      "title": "Mobile number"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "items": {
+      "type": "array",
+      "title": "Items",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "original_price": {
+            "type": "number"
+          },
+          "option": {
+            "type": "string"
+          },
+          "option_label": {
+            "type": "string"
+          },
+          "balance_due": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "total": {
+      "type": "number",
+      "title": "Total (INR)"
+    },
+    "mrp": {
+      "type": "number",
+      "title": "MRP total (INR)"
+    },
+    "payment_method": {
+      "type": "string",
+      "title": "Payment method",
+      "enum": [
+        "upi"
+      ],
+      "enumColors": [
+        "blue"
+      ],
+      "default": "upi"
+    },
+    "upi_id": {
+      "type": "string",
+      "title": "UPI ID used"
+    },
+    "payment_screenshot_uri": {
+      "type": "string",
+      "title": "Payment screenshot (private)"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "pending",
+        "confirmed",
+        "rejected"
+      ],
+      "enumColors": [
+        "yellow",
+        "green",
+        "red"
+      ],
+      "default": "pending"
+    },
+    "rejection_reason": {
+      "type": "string",
+      "title": "Rejection reason"
+    },
+    "confirmed_at": {
+      "type": "string",
+      "title": "Confirmed at"
+    },
+    "review_deadline": {
+      "type": "string",
+      "title": "Verify within"
+    }
+  },
+  "required": [
+    "user_id",
+    "customer_name",
+    "mobile",
+    "items",
+    "total"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

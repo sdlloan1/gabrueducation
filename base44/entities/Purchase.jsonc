@@ -1,0 +1,80 @@
+{
+  "name": "Purchase",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "title": "Buyer user id"
+    },
+    "user_email": {
+      "type": "string",
+      "title": "Buyer email"
+    },
+    "product_id": {
+      "type": "string",
+      "title": "Product id"
+    },
+    "product_title": {
+      "type": "string",
+      "title": "Product title"
+    },
+    "product_slug": {
+      "type": "string",
+      "title": "Product slug"
+    },
+    "option": {
+      "type": "string",
+      "title": "Purchased option"
+    },
+    "option_label": {
+      "type": "string",
+      "title": "Purchased option label"
+    },
+    "order_id": {
+      "type": "string",
+      "title": "Order id"
+    },
+    "price_paid": {
+      "type": "number",
+      "title": "Price paid (INR)"
+    },
+    "access": {
+      "type": "string",
+      "title": "Access",
+      "default": "lifetime"
+    }
+  },
+  "required": [
+    "user_id",
+    "product_id"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
