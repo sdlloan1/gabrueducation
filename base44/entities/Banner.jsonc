@@ -1,0 +1,61 @@
+{
+  "name": "Banner",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "subtitle": {
+      "type": "string",
+      "title": "Subtitle"
+    },
+    "badge": {
+      "type": "string",
+      "title": "Badge text"
+    },
+    "cta_label": {
+      "type": "string",
+      "title": "Button label"
+    },
+    "link": {
+      "type": "string",
+      "title": "Link"
+    },
+    "image_url": {
+      "type": "string",
+      "title": "Artwork"
+    },
+    "sort_order": {
+      "type": "number",
+      "title": "Sort order",
+      "default": 0
+    },
+    "is_active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

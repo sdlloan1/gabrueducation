@@ -1,0 +1,223 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Product title"
+    },
+    "slug": {
+      "type": "string",
+      "title": "Slug"
+    },
+    "type": {
+      "type": "string",
+      "title": "Product type",
+      "enum": [
+        "template",
+        "prompt",
+        "code_file",
+        "course",
+        "software",
+        "ebook",
+        "service"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "green",
+        "yellow",
+        "pink",
+        "gray",
+        "red"
+      ],
+      "default": "template"
+    },
+    "category_id": {
+      "type": "string",
+      "title": "Category id"
+    },
+    "category_name": {
+      "type": "string",
+      "title": "Category name"
+    },
+    "images": {
+      "type": "array",
+      "title": "Photos",
+      "items": {
+        "type": "string"
+      }
+    },
+    "youtube_url": {
+      "type": "string",
+      "title": "YouTube video link"
+    },
+    "short_description": {
+      "type": "string",
+      "title": "Short description"
+    },
+    "description": {
+      "type": "string",
+      "title": "Full description"
+    },
+    "description_images": {
+      "type": "array",
+      "title": "Description images",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "title": "Tags",
+      "items": {
+        "type": "string"
+      }
+    },
+    "original_price": {
+      "type": "number",
+      "title": "Original price (INR)"
+    },
+    "discounted_price": {
+      "type": "number",
+      "title": "Selling price (INR)"
+    },
+    "prompt_price": {
+      "type": "number",
+      "title": "Prompt only price (INR)"
+    },
+    "code_price": {
+      "type": "number",
+      "title": "Complete code price (INR)"
+    },
+    "developer_price": {
+      "type": "number",
+      "title": "Hire developer price (INR)"
+    },
+    "app_dev_price": {
+      "type": "number",
+      "title": "App development price (INR)"
+    },
+    "badge": {
+      "type": "string",
+      "title": "Badge",
+      "enum": [
+        "none",
+        "best_choice",
+        "best_offer",
+        "trending"
+      ],
+      "enumColors": [
+        "gray",
+        "blue",
+        "green",
+        "yellow"
+      ],
+      "default": "none"
+    },
+    "has_prompt": {
+      "type": "boolean",
+      "title": "Includes a prompt",
+      "default": false
+    },
+    "prompt_preview": {
+      "type": "string",
+      "title": "Prompt preview (first 30%)"
+    },
+    "prompt_char_count": {
+      "type": "number",
+      "title": "Prompt character count"
+    },
+    "has_code_file": {
+      "type": "boolean",
+      "title": "Includes a downloadable file",
+      "default": false
+    },
+    "delivery_note": {
+      "type": "string",
+      "title": "Delivery note"
+    },
+    "service_monthly_min": {
+      "type": "number",
+      "title": "Monthly salary from (INR)"
+    },
+    "service_monthly_max": {
+      "type": "number",
+      "title": "Monthly salary up to (INR)"
+    },
+    "service_advance": {
+      "type": "number",
+      "title": "Advance payment (INR)"
+    },
+    "developer_name": {
+      "type": "string",
+      "title": "Developer name"
+    },
+    "developer_whatsapp": {
+      "type": "string",
+      "title": "Developer WhatsApp number"
+    },
+    "rating_avg": {
+      "type": "number",
+      "title": "Average rating",
+      "default": 0
+    },
+    "rating_count": {
+      "type": "number",
+      "title": "Rating count",
+      "default": 0
+    },
+    "sales_count": {
+      "type": "number",
+      "title": "Sales",
+      "default": 0
+    },
+    "is_active": {
+      "type": "boolean",
+      "title": "Published",
+      "default": true
+    },
+    "is_featured": {
+      "type": "boolean",
+      "title": "Featured",
+      "default": false
+    },
+    "seo_title": {
+      "type": "string",
+      "title": "SEO title"
+    },
+    "seo_description": {
+      "type": "string",
+      "title": "SEO description"
+    },
+    "seo_keywords": {
+      "type": "array",
+      "title": "SEO keywords",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "title",
+    "slug"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

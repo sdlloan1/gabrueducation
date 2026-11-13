@@ -1,0 +1,15 @@
+{
+  "name": "gabrueducation-api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Local API for the Gabru Education frontend: entities, auth, backend functions and uploads.",
+  "scripts": {
+    "start": "node index.js",
+    "seed": "node seed.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^2.0.2"
+  }
+}
