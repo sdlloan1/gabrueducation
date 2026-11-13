@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { loginWithMfa } from "@/lib/authMfa";
+import { appPath } from "@/lib/urls";
 import { signInWithProvider } from "@/lib/authMfaFlow";
 import MfaFlow from "@/components/MfaFlow";
 import { MfaScreen } from "@/components/MfaParts";
@@ -32,7 +33,7 @@ export default function Login() {
         setMfaChallenge(result);
         return;
       }
-      window.location.href = returnTo;
+      window.location.href = appPath(returnTo);
     } catch (err) {
       setError(err.message || "Invalid email or password");
     } finally {

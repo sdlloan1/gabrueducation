@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { signInWithProvider } from "@/lib/authMfaFlow";
+import { appPath } from "@/lib/urls";
 import MfaFlow from "@/components/MfaFlow";
 import { MfaScreen } from "@/components/MfaParts";
 import { Button } from "@/components/ui/button";
@@ -57,7 +58,7 @@ export default function Register() {
       if (result?.access_token) {
         db.auth.setToken(result.access_token);
       }
-      window.location.href = safeReturnTo();
+      window.location.href = appPath(safeReturnTo());
     } catch (err) {
       setError(err.message || "Invalid verification code");
     } finally {

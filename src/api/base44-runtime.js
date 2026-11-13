@@ -5,8 +5,9 @@
 // `db.app.getPublicSettings`). This module provides that surface on top of the
 // local API in `server/` and is installed on `globalThis.__B44_DB__` before any
 // app module runs (see index.html).
+import { API_BASE, apiUrl, appPath } from '@/lib/urls';
+
 const TOKEN_KEY = 'base44_access_token';
-const API_BASE = '/api';
 
 function getToken() {
   try {
@@ -176,10 +177,10 @@ const auth = {
   logout(redirectUrl) {
     setToken('');
     request('/auth/logout', { method: 'POST', auth: false }).catch(() => {});
-    if (redirectUrl) window.location.href = '/login';
+    if (redirectUrl) window.location.href = appPath('/login');
   },
   redirectToLogin() {
-    if (window.location.pathname !== '/login') window.location.href = '/login';
+    if (window.location.pathname !== appPath('/login')) window.location.href = appPath('/login');
   },
   async loginWithProvider() {
     throw new Error('Google sign-in is not configured for this local environment. Use email and password.');
@@ -193,7 +194,10 @@ const functions = {
 async function upload(file, visibility) {
   const formData = new FormData();
   formData.append('file', file);
-  return request(`/integrations/core/upload/${visibility}`, { method: 'POST', formData });
+  const result = await request(`/integrations/core/upload/${visibility}`, { method: 'POST', formData });
+  // The API answers with its own file path; resolve it against the API origin
+  // so the stored URL also works when the frontend is hosted elsewhere.
+  return { ...result, file_url: apiUrl(result?.file_uri || result?.file_url) };
 }
 
 const integrations = {

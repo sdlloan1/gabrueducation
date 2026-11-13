@@ -1,0 +1,60 @@
+name: Deploy frontend to GitHub Pages
+
+# Builds the storefront as a static site and publishes it to GitHub Pages.
+# The API is not deployed here: it keeps running on Base44, and the build bakes
+# its address in through the VITE_API_BASE_URL repository variable.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Build the storefront
+        env:
+          # Project sites live at /<repo>/ ; set the VITE_BASE_PATH variable to
+          # override this when the site uses a custom domain (use "/").
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || format('/{0}/', github.event.repository.name) }}
+          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
+        run: |
+          if [ -z "$VITE_API_BASE_URL" ]; then
+            echo "::error::Set the VITE_API_BASE_URL repository variable (Settings → Secrets and variables → Actions → Variables) to the Base44 backend address, e.g. https://my-app.base44.app or https://8000-<host>."
+            exit 1
+          fi
+          npm ci
+          npm run build:pages
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
